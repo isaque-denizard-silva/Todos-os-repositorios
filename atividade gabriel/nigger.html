@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo</title>
+</head>
+
+<body>
+
+
+  <button onclick='mudar()'>Mudar Cor</button>
+  <div></div>
+
+
+  <script>
+
+    function mudar() {
+
+      
+      let caixa = document.querySelector('div')
+
+      caixa.classList.toggle('ativo')
+
+    }
+
+  </script>
+
+  <style>
+    div {
+
+      position: relative;
+      height: 100px;
+      width: 100px;
+      background-color: red;
+
+
+
+
+    }
+
+    .ativo {
+
+      background-color: blue;
+      border-radius: 200px;
+
+
+    }
+  </style>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <ul>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul');
+        const input = document.querySelector('input');
+        input.addEventListener('change', function() {
+            const valor = document.createTextNode(input.value);
+            const li = document.createElement('li');
+            li.appendChild(valor);
+            ul.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>

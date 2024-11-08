@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Configure sua Moto</h1>
+        <p class="info">Alterar marca</p>
+        <input type="text" id="marca">
+        <p class="info">Alterar modelo</p>
+        <input type="text" id="modelo">
+        <p class="info">Acelerar</p>
+        <input type="text" id="velocidade">
+        <p class="marca"></p>
+        <p class="modelo"></p>
+        <h3 class="velocidade"></h3>
+        <p id="erro"></p>
+    </div>
+    <br>
+
+    <script>
+        let velocidadeCampo = document.querySelector('.velocidade');
+        let marcaCampo = document.querySelector('.marca');
+        let modeloCampo = document.querySelector('.modelo');
+        let velocidadeInput = document.querySelector('#velocidade');
+        let modeloInput = document.querySelector('#modelo');
+        let marcaInput = document.querySelector('#marca');
+        let error = document.querySelector('#erro');
+        class Veiculo {
+            #marca;
+            #modelo;
+            constructor(marca, modelo) {
+                this.#marca = marca;
+                this.#modelo = modelo;
+                if (new.target == Veiculo) {
+                    throw new Error('A classe veículo não pode ser instanciada')
+                }
+            }
+            getMarca() {
+                return this.#marca;
+            };
+            getModelo() {
+                return this.#modelo;
+            };
+            setModelo(valor) {
+                this.#modelo = valor;
+            };
+            setMarca(valor) {
+                this.#marca = valor
+            };
+        }
+
+
+        class Moto extends Veiculo {
+            #velocidade = 0;
+            #limiteVelocidade;
+            constructor(marca, modelo, limiteVelocidade) {
+                super(marca, modelo);
+                this.#limiteVelocidade = limiteVelocidade;
+            }
+
+            acelerar(valor) {
+                try {
+                    erro.innerText = '';
+                    if (isNaN(valor)) {
+                        throw new Error('O valor digitado não<br> é um número válido');
+                    }
+
+                    if (valor > 0) {
+                        if (this.#velocidade + valor <= this.#limiteVelocidade) {
+                            this.#velocidade += valor;
+                            velocidadeCampo.innerText = `Velocidade: ${this.#velocidade}Km/h.`;
+                        } else {
+                            erro.innerHTML = `Moto não pode ser <br>
+                            acelerada acima da<br> velocidade de ${this.#limiteVelocidade}`;
+                        }
+                    } else if (valor == 0) {
+                        erro.innerText = 'Valor da aceleração deve ser maior do que 0';
+                    }
+                    else {
+                        if (this.#velocidade + valor >= 0) {
+                            this.#velocidade += valor;
+                            velocidadeCampo.innerText = `Velocidade: ${this.#velocidade}Km/h.`;
+                        } else {
+                            erro.innerHTML = `Moto não pode ter <br>desaceleração menor<br> que 0`;
+
+                        }
+                    }
+                } catch (erro) {
+                    error.innerHTML = erro.message;
+                }
+            }
+
+            getVelocidade() {
+                return this.#velocidade;
+            }
+
+        }
+
+        let moto = new Moto('Honda', 'CBF1000', '299');
+        marcaCampo.innerText = 'Marca: ' + moto.getMarca();
+        modeloCampo.innerText = 'Modelo: ' + moto.getModelo();
+        velocidadeCampo.innerText = 'Velocidade: ' + moto.getVelocidade() + 'Km/h';
+
+        modeloInput.addEventListener('change', function () {
+            moto.setModelo(this.value);
+            modeloCampo.innerText = `Modelo: ${moto.getModelo()}`;
+            this.value = '';
+        })
+
+        marcaInput.addEventListener('change', function () {
+            moto.setMarca(this.value);
+            marcaCampo.innerText = `Marca: ${moto.getMarca()}`;
+            this.value = '';
+        })
+        velocidadeInput.addEventListener('change', function () {
+            moto.acelerar(parseFloat(this.value));
+            this.value = '';
+        })
+
+    </script>
+    <style>
+        body {
+            display: flex;
+            background-image: url('//io.convertiez.com.br/m/shopjj/shop/products/images/112082508/medium/moto-infantil-brinquedo-rm-motorcycle-moto-grande-345-cm_5379.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            border-radius: 30%;
+            border: 1px solid black;
+            padding: 5%;
+            text-align: center;
+            background-color: white;
+        }
+
+        #erro {
+            display: block;
+            color: red;
+            font-weight: 700;
+        }
+
+        .info {
+            line-height: 0.5;
+            font-weight: 700;
+        }
+    </style>
+
+
+
+</body>
+
+</html>

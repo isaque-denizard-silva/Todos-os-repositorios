@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        // let numeros = [5,15,25,35]
+        // numeros.splice (1,0,25)
+        // console.log(numeros.join(','));
+        // let frutas = ['maca', 'banana', 'laranja']
+        // frutas.splice(0,1,'abacaxi');
+        let valores = [100, 200, 300, 400, 500];
+        valores.splice(1, 2, 250)
+        document.querySelector('p').textContent = valores.join(', ')
+    </script>
+</body>
+</html>

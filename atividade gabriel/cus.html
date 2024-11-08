@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2</title>
+</head>
+
+<body>
+
+    <button id="meuBotao">Clique aqui</button>
+    <p></p>
+
+    <script>
+        const boao = document.getElementById('meuBotao');
+        const paragrafo =document.querySelector('p');
+        console.log('ID do botão:', botao.id);
+        console.log('Tipo do botão:', botao.type);
+
+        if (!botao.hasAttribute('onclick')){
+
+            botao.setAttribute('onclick', 'button');
+       
+
+        }
+
+        console.log('Type do botão após verificação:',botao.getAttribute('type'));
+
+
+    </script>
+
+</body>
+
+</html>

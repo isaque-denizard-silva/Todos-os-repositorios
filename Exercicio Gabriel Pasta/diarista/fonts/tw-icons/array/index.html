@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicação</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        span {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span></span>
+    </div>
+    <script>
+        
+        let multiplicacao;
+        let valor;
+        let i = 0;
+        let array = [];
+        while(i < 3){
+            valor = parseFloat(prompt('Digite o número:'));
+            array.push(valor);
+            i++;
+        }
+        multiplicacao = array[0] / array[1] / array[2];
+        document.querySelector('span').innerText = `A multiplicação dos 3 números ${multiplicacao.toFixed(3)}`
+
+    </script>
+</body>
+</html>

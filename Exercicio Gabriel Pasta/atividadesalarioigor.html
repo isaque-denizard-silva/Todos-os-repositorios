@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>salário</title>
+        <meta http-equiv = "Content-Type" content="text-html;charset=UTF-8">
+        <script type="text/javascript">
+            function calcularsalario(){
+            var pessoa1;
+            var pessoa2;
+            var pessoa3;
+            var pessoa4;
+            var pessoa5;
+            var pessoa6;
+            var pessoa7;
+            var pessoa8;
+            var pessoa9;
+            var pessoa10;
+            var fgts;
+            var soma;
+            var media_salarial;
+            pessoa1=document.calculos.salariopessoa1.value;
+            pessoa2=document.calculos.salariopessoa2.value;
+            pessoa3=document.calculos.salariopessoa3.value;
+            pessoa4=document.calculos.salariopessoa4.value;
+            pessoa5=document.calculos.salariopessoa5.value;
+            pessoa6=document.calculos.salariopessoa6.value;
+            pessoa7=document.calculos.salariopessoa7.value;
+            pessoa8=document.calculos.salariopessoa8.value;
+            pessoa9=document.calculos.salariopessoa9.value;
+            pessoa10=document.calculos.salariopessoa10.value;
+            soma=parseInt(pessoa1)+parseInt(pessoa2)+parseInt(pessoa3)+parseInt(pessoa4)+parseInt(pessoa5)+parseInt(pessoa6)+parseInt(pessoa7)+parseInt(pessoa8)+parseInt(pessoa9)+parseInt(pessoa10);
+            document.calculos.resultado.value=soma;
+            fgts=soma*0.08;
+            document.calculos.fgts.value=fgts;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="calculos">
+            <table align="center">
+                <tr>
+                    <td><label>Informe o valor da pessoa 1</label></td>
+                    <td><input type="text" name="salariopessoa1" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 2</label></td>
+                    <td><input type="text" name="salariopessoa2" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 3</label></td>
+                    <td><input type="text" name="salariopessoa3" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 4</label></td>
+                    <td><input type="text" name="salariopessoa4" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 5</label></td>
+                    <td><input type="text" name="salariopessoa5" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 6</label></td>
+                    <td><input type="text" name="salariopessoa6" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 7</label></td>
+                    <td><input type="text" name="salariopessoa7" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 8</label></td>
+                    <td><input type="text" name="salariopessoa8" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 9</label></td>
+                    <td><input type="text" name="salariopessoa9" value="" size="10"><br></td>
+                </tr>
+                <tr>
+                    <td><label>Informe o valor da pessoa 10</label></td>
+                    <td><input type="text" name="salariopessoa10" value="" size="10"><br></td>
+                </tr>
+                <br>
+                <td colspan="2" align="center"><input type="button" name= "bt" value="calcule" onclick="calcularsalario();">
+                    <br>
+                    </td>
+                </tr>
+                </table>
+                <br>
+                <div style="border:1 px solid black">
+                <table align="center">
+                    <tr>
+                        <td><label><b>Resultado</b></label></td>
+                        <td><input type="text" name="resultado" value="" size="10"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>FGTS</b></label></td>
+                        <td><input type="text" name="fgts" value="" size="10"><br></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </body>
+</html>

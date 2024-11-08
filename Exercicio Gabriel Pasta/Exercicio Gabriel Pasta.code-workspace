@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "Exercicio Gabriel Pasta",
+			"path": "."
+		},
+		{
+			"path": "../Isaac"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Exercicio Gabriel Pasta"
+	}
+}

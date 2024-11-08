@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+
+<body>
+    <video class="video" controls>
+        <source src='./David Guetta - Titanium ft. Sia (Official Video).mp4'>
+    </video>
+    <br><br><br>
+    <div>
+        <button class='play'>Play</button>
+        <button class='pause'>Pause</button>
+        <button class='reiniciar'>Reiniciar</button>
+        <button class='screen'>Screen</button>
+        <button class="mute">muted</button>
+    </div>
+    <p></p>
+
+    <script>
+        const play = document.querySelector('.play');
+        const pause = document.querySelector('.pause');
+        const reiniciar = document.querySelector('.reiniciar');
+        const screen = document.querySelector('.screen');
+        const video = document.querySelector('.video');
+        const mute =  document.querySelector('.mute')
+        const p = document.querySelector('p')
+        play.addEventListener('click', function () {
+            video.play();
+        })
+
+        reiniciar.addEventListener('click', function(){
+               video.currentTime = 0; 
+            })
+
+        mute.addEventListener('click', function (){
+            video.muted = !video.muted
+            mute.innerText = video.muted ? 'Unmuted' : 'muted';
+        })
+
+        pause.addEventListener('click', function(){
+            video.pause()
+        })
+
+        screen.addEventListener('click', function(){
+            video.requestFullscreen();
+        })
+        
+        video.addEventListener('ended', function(){
+            p.innerText = 'O vídeo acabou';
+        })
+
+    
+
+
+    </script>
+
+</body>
+
+</html>

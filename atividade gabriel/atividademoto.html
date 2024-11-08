@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <script>
+        function Moto(marca, modelo, limiteVelocidade){
+            this.marca = marca;
+            this.modelo = modelo;
+            let velocidade = 0
+            this.acelerar = function (valor) {
+                if (velocidade + valor >= 0) {
+                    if (velocidade + valor <= limiteVelocidade) {
+                        velocidade += valor;
+                    };
+                }
+            },
+            this.getvelocidade = function () {
+                return velocidade;
+            }
+            this.getModelo = function () {
+                return this.modelo;
+            }
+            this.getMarca =  function (){
+                return this.marca;
+            }
+        }
+
+        let moto1 = new Moto('Honda', 'CB1000', 300);
+        let moto2 = new Moto('Kawasaki', 'AO2468', 500);
+        let MOTO3 = new Moto('Castrol', 'ES1357', 450);
+        let moto4 = new Moto('Mondial', 'LS1234', 750);
+
+    </script>
+</body>
+
+</html>

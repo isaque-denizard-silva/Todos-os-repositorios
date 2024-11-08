@@ -1,0 +1,176 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #6B2AEE;
+    --secondary: #02E7D9;
+    --light-grey: #E5E5E5;
+    --dark-grey: #707070;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    padding: 15px 0;
+    box-shadow: 1px 0 15px rgba(98, 98, 98, 0.294);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-contained {
+    background-color: var(--primary);
+    padding: 10px 35px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.btn-void {
+    background-color: #FAFAFA;
+    padding: 10px 35px;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+
+.principal {
+    background: url("img/Imagem-fundo.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 70%;
+}
+
+.principal-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.principal-description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 370px;
+}
+
+.principal-diarista-text {
+    border: solid 2px var(--light-grey);
+    padding: 15px 35px;
+    border-radius: 70px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    position: relative;
+}
+
+.principal-description p {
+    font-size: 20px;
+    color: var(--dark-grey);
+    padding-left: 35px;
+}
+
+.principal-diarista-text span {
+    color: var(--primary)
+}
+
+.principal-image::before {
+    width: 131px;
+    height: 131px;
+    background-color: var(--primary);
+    top: 90px;
+}
+
+
+.principal-image::after {
+    width: 37px;
+    height: 37px;
+    background-color: var(--light-grey);
+    bottom: 35px;
+    z-index: 50;
+}
+
+.porque {
+    background-image: linear-gradient(var(--secondary), var(--primary));
+    margin-top: -100px;
+    padding: 100px 0;
+    color: #fff;
+    position: relative;
+}
+
+.porque::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 4px #fff;
+    background-color: var(--secondary);
+    background-image: url('./img/icon-triangulo\ \(2\).png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    right: 50%;
+    top: -30px;
+    transform: translate(50%);
+    position: absolute;
+}
+
+.porque h2 {
+    margin: 0 0 30px 0;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.porque hr {
+    width: 10%;
+    border-color: rgba(255, 255, 255, 0.25);
+
+}
+
+.porque-campos-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.porque-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.porque-item h4,
+.porque-item p {
+    margin: 0;
+}
+
+.porque-item div:first-child {
+    border: solid 2px #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.porque-item i {
+    font-size: 40px
+}

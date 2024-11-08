@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <script>
+       let palavra= prompt('Digite a palavra');
+       let vogais = ['a','e','i','o','u']
+       let palavraArr=palavra.toLowerCase().split('');
+       let vogal = palavraArr.filter(valor=>!vogais.includes(valor));
+        let paragrafo = document.querySelector('p');
+        paragrafo.textContent = vogal.join(', ');
+
+    </script>
+
+</body>
+
+</html>
+  

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class='contadorTimeOut'>Contador: 0</p>
+    <p class='contadorInterval'>Contador: 0</p>
+    <button class='startTimeOut'> Iniciar Timeout </button>
+    <button class='stopTimeOut'> Parar Timeout</button>
+    <button class='startInterval'> Start interval</button>
+    <button class='stopInterval'> Stop interval</button>
+    <script>
+        const startTimeOut = document.querySelector('.startTimeOut');
+        const stopTimeOut = document.querySelector('.stopTimeOut');
+        const startInterval = document.querySelector('.startInterval');
+        const stopInterval = document.querySelector('.stopInterval');
+        let contadorTimeOut = document.querySelector('.contadorTimeOut');
+        let contadorInterval = document.querySelector('.contadorInterval');
+        let count1 = 0;
+        let count2 = 0;
+        let timeOut;
+        let interval;
+        startTimeOut.addEventListener('click', function () {
+            timeout = setTimeout(() => {
+                count1++;
+                contadorTimeOut.textContent = `Contador ${count1}`;
+            }, 1000);
+        });
+        stopTimeOut.addEventListener('click', function () {
+            clearTimeout(timeout);
+            timeout = null;
+        })
+
+        startInterval.addEventListener('click', function () {
+            if(!interval){
+            interval = setInterval(() => {
+                count2++;
+                contadorInterval.textContent = `Contador: ${count2}`
+            }, 1000);
+            }
+
+        });
+
+        stopInterval.addEventListener('click', function () {
+            clearInterval(interval);
+            interval = null;
+        })
+    </script>
+
+</html>

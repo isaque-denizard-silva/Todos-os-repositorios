@@ -1,0 +1,10 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+--primary: #3c8ee0 ;
+--secondary: rgb(106, 244, 26) ;
+     
+}
